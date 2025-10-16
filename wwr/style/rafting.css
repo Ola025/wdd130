@@ -10,6 +10,7 @@
 :root {
   --primary-color: #00796b;
   --accent1-color: #004d40;
+  --light-bg: #e0f2f1;
   --heading-font: Georgia, serif;
   --body-font: Arial, sans-serif;
 }
@@ -21,28 +22,33 @@ body {
   font-family: var(--body-font);
   color: var(--accent1-color);
   line-height: 1.6;
+  background-color: #f9f9f9;
 }
 
-header, main, footer {
+header,
+main,
+footer {
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
 }
 
-h1, h2 {
+h1,
+h2,
+h3 {
   font-family: var(--heading-font);
   color: var(--primary-color);
   margin-bottom: 12px;
 }
 
 /* ===============================
-   Header & Nav
+   Header & Navigation
 ================================ */
 header {
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
-  background-color: #e0f2f1;
+  background-color: var(--light-bg);
   padding: 12px;
 }
 
@@ -60,6 +66,7 @@ nav a {
   text-decoration: none;
   color: var(--primary-color);
   font-weight: bold;
+  transition: color 0.3s;
 }
 
 nav a:hover {
@@ -78,15 +85,17 @@ nav a:hover {
   display: block;
   width: 100%;
   height: auto;
+  opacity: 0.9;
 }
 
 .hero h1 {
   position: absolute;
-  top: 20px;
+  top: 40%;
   width: 100%;
   text-align: center;
-  padding: 12px;
-  background-color: rgba(0, 77, 64, 0.8);
+  padding: 16px;
+  font-size: 2rem;
+  background-color: rgba(0, 77, 64, 0.7);
   color: white;
 }
 
@@ -109,7 +118,7 @@ nav a:hover {
 }
 
 /* ===============================
-   History Section
+   History Section (About Page)
 ================================ */
 .history {
   margin: 40px 0;
@@ -130,7 +139,7 @@ nav a:hover {
 }
 
 /* ===============================
-   Adventures Section
+   Adventures Section (About Page)
 ================================ */
 .adventures {
   margin: 40px 0;
@@ -161,6 +170,116 @@ nav a:hover {
 }
 
 /* ===============================
+   Featured Trips (Trips Page)
+================================ */
+.featured-trips {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.trip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.trip-grid img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.trip {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trip:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.trip h3 {
+  color: var(--primary-color);
+  margin-top: 10px;
+}
+
+.trip p {
+  padding: 0 1rem 1rem;
+  font-size: 0.95rem;
+}
+
+/* ===============================
+   Newsletter Section
+================================ */
+.newsletter {
+  text-align: center;
+  background-color: var(--light-bg);
+  padding: 30px 10px;
+  margin: 40px 0;
+  border-radius: 8px;
+}
+
+.newsletter form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.newsletter input {
+  padding: 10px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.newsletter button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.newsletter button:hover {
+  background-color: #009688;
+}
+
+/* ===============================
+   Call to Action (Home Page)
+================================ */
+.cta {
+  text-align: center;
+  background-color: var(--accent1-color);
+  color: white;
+  padding: 40px 20px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+
+.cta .btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: white;
+  color: var(--primary-color);
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.cta .btn:hover {
+  background-color: var(--light-bg);
+}
+
+/* ===============================
    Footer
 ================================ */
 footer {
@@ -180,4 +299,9 @@ footer {
 .socialmedia img {
   width: 32px;
   height: 32px;
+  transition: transform 0.3s;
+}
+
+.socialmedia img:hover {
+  transform: scale(1.1);
 }
